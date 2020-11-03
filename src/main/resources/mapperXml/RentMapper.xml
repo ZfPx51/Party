@@ -4,17 +4,17 @@
 
     <resultMap id="RentList" type="com.party.demo.domain.RentingInfo">
         <id column="id" property="id" jdbcType="INTEGER"/>
-        <result column="buildnum" property="buildnum" jdbcType="VARCHAR"/>
-        <result column="roomnum" property="roomnum" jdbcType="VARCHAR"/>
-        <result column="roomarea" property="roomarea" jdbcType="INREGER"/>
+        <result column="buildNum" property="buildNum" jdbcType="VARCHAR"/>
+        <result column="roomNum" property="roomNum" jdbcType="VARCHAR"/>
+        <result column="roomArea" property="roomArea" jdbcType="INTEGER"/>
         <result column="decorate" property="decorate" jdbcType="VARCHAR"/>
         <result column="rent" property="rent" jdbcType="FLOAT"/>
-        <result column="liveteam" property="liveteam" jdbcType="VARCHAR"/>
-        <result column="sumperson" property="sumperson" jdbcType="INTEGER"/>
+        <result column="liveTeam" property="liveTeam" jdbcType="VARCHAR"/>
+        <result column="sumPerson" property="sumPerson" jdbcType="INTEGER"/>
         <result column="status" property="status" jdbcType="VARCHAR"/>
-        <result column="livedate" property="livedate" jdbcType="DATE"/>
+        <result column="liveDate" property="liveDate" jdbcType="DATE"/>
     </resultMap>
-    <select id="getRecruitInfo" parameterType="string" resultMap="RentList">
+    <select id="getRentingInfo"  resultMap="RentList">
         SELECT * FROM rentinginfo
      </select>
 

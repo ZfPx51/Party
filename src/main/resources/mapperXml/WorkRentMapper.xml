@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.WorkRentMapper">
+
+    <resultMap id="WorkRentList" type="com.party.demo.domain.WorkRenting">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="buildNum" property="buildNum" jdbcType="VARCHAR"/>
+        <result column="roomNum" property="roomNum" jdbcType="VARCHAR"/>
+        <result column="area" property="area" jdbcType="INTEGER"/>
+        <result column="rent" property="rent" jdbcType="FLOAT"/>
+        <result column="team" property="team" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="INTEGER"/>
+        <result column="leader" property="leader" jdbcType="VARCHAR"/>
+        <result column="leaderContact" property="leaderContact" jdbcType="VARCHAR"/>
+        <result column="workSum" property="workSum" jdbcType="INTEGER"/>
+    </resultMap>
+    <select id="getWorkRentingInfo"  resultMap="WorkRentList">
+        SELECT * FROM workrenting
+     </select>
+
+</mapper>
+

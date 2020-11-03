@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.StartMapper">
+
+    <resultMap id="StartList" type="com.party.demo.domain.StartInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="team" property="team" jdbcType="VARCHAR"/>
+        <result column="sumPerson" property="sumPerson" jdbcType="INTEGER"/>
+        <result column="remarks" property="remarks" jdbcType="VARCHAR"/>
+        <result column="startFunt" property="startFunt" jdbcType="INTEGER"/>
+        <result column="industry" property="industry" jdbcType="VARCHAR"/>
+        <result column="leader" property="leader" jdbcType="VARCHAR"/>
+        <result column="applyDate" property="applyDate" jdbcType="DATE"/>
+    </resultMap>
+    <select id="getStartInfo"  resultMap="StartList">
+        SELECT * FROM startinfo
+     </select>
+
+</mapper>
+
