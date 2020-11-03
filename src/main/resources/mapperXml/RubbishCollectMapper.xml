@@ -56,5 +56,10 @@ SELECT createtime FROM rubbishworks ORDER BY createtime DESC LIMIT 1 OFFSET 0
     <select id="getRubbishWorkersData" resultMap="RubbishList">
 SELECT * FROM rubbishworks
     </select>
+
+    <select id="getRubbishByCollectUser" parameterType="String" resultMap="RubbishList">
+
+SELECT * FROM rubbishworks where collectuser= #{collectUser}
+    </select>
 </mapper>
 

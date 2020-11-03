@@ -23,4 +23,11 @@ public class RubbishController {
 
     }
 
+    @RequestMapping(value = "/getRubbishByCollectUser", method = {RequestMethod.GET})
+    public List<RubbishWorkers> getRubbishByCollectUser(String collectUser) {
+
+        return rubbishService.getRubbishByCollectUser(collectUser);
+
+    }
+
 }

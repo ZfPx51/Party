@@ -26,9 +26,10 @@ public class MainTask {
     @Autowired
     private RubbishService rubbishService;
 
-    @Scheduled(cron = "0 0 9,21 * * ? ")
+    //@Scheduled(cron = "0 0 9,21 * * ? ")
+    @Scheduled(cron = "0/59 0/3 * * * ? ")
     public void InsertTable() {
-        System.out.println(111);
+        System.out.println("定时任务开始");
         String checkData = rubbishService.checkCreateDate();
         String data= rubbishService.getRubbishData(checkData);
         Object succesResponse = JSON.parse(data);    //先转换成Object
@@ -36,6 +37,7 @@ public class MainTask {
         //System.out.println(map);//Object强转换为Map
         System.out.println(map.get("data"));
         rubbishService.InsertInfo((List<Map<String, Object>>) map.get("data"));
+        System.out.println("数据插入成功");
     }
 
 }

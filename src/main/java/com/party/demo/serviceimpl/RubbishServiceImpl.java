@@ -42,6 +42,7 @@ public class RubbishServiceImpl implements RubbishService {
 
         String l = String.valueOf(System.currentTimeMillis());
         if (StringUtils.isEmpty(checkData)) {
+            System.out.println("本地表为空正在插入");
             param = "appId=" + appid + "&pageSize=5&time=" + l + "&key=" + secret;
             String sign = DigestUtils.md5Hex(param).toUpperCase();
 
@@ -60,7 +61,6 @@ public class RubbishServiceImpl implements RubbishService {
             params.add(new BasicNameValuePair("pageSize", "5"));
         }
 
-        System.out.println("进来了");
 
 
         String response = null;
@@ -90,6 +90,11 @@ public class RubbishServiceImpl implements RubbishService {
     @Override
     public List<RubbishWorkers> getRubbishWorkersData() {
         return rubbishCollectMapper.getRubbishWorkersData();
+    }
+
+    @Override
+    public List<RubbishWorkers> getRubbishByCollectUser(String collectUser) {
+        return rubbishCollectMapper.getRubbishByCollectUser(collectUser);
     }
 
 

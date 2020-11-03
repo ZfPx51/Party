@@ -20,4 +20,9 @@ public class MemberServiceImpl implements MemberService {
 
         return memberMapper.getPerson();
     }
+
+    @Override
+    public List<Person> getPersonByEducation(String levelEducation) {
+        return memberMapper.getPersonByEducation(levelEducation);
+    }
 }

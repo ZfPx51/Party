@@ -7,4 +7,6 @@ import java.util.List;
 
 public interface MemberService {
     List<Person> getPerson();
+
+    List<Person> getPersonByEducation(String levelEducation);
 }

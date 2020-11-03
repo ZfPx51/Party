@@ -13,4 +13,6 @@ public interface RubbishCollectMapper {
     String checkCreateDate();
 
     List<RubbishWorkers> getRubbishWorkersData();
+
+    List<RubbishWorkers> getRubbishByCollectUser(String collectUser);
 }

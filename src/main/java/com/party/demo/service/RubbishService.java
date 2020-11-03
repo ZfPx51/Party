@@ -13,4 +13,6 @@ public interface RubbishService {
     String checkCreateDate();
 
     List<RubbishWorkers> getRubbishWorkersData();
+
+    List<RubbishWorkers> getRubbishByCollectUser(String collectUser);
 }

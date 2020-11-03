@@ -11,4 +11,6 @@ public interface MemberMapper {
 
     List<Person> getPerson();
 
+    List<Person> getPersonByEducation(String levelEducation);
+
 }

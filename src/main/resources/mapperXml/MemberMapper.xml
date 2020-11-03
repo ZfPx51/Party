@@ -18,4 +18,8 @@
         SELECT * FROM person
      </select>
 
+    <select id="getPersonByEducation" parameterType="String" resultMap="personList">
+        SELECT *  FROM person  where leveleducation = #{levelEducation}
+     </select>
+
 </mapper>
