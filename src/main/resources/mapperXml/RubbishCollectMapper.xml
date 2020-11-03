@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.RubbishCollectMapper">
+
+
+    <insert id="InsertInfo" parameterType="java.util.List" useGeneratedKeys="false">
+        insert into rubbishworks
+        (
+        userId,collectUser,address,weight,userTel,point,rubbishType,collectType,unit,build,createTime,identityinfo,putTime,village,userName,imgPath)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.userId},
+            #{item.collectUser},
+            #{item.address},
+            #{item.weight},
+            #{item.userTel},
+            #{item.point},
+            #{item.rubbishType},
+            #{item.collectType},
+            #{item.unit},
+            #{item.build},
+            #{item.createTime},
+            #{item.identity},
+            #{item.putTime},
+            #{item.village},
+            #{item.username},
+            #{item.imgPath}
+            )
+        </foreach>
+    </insert>
+
+    <resultMap id="RubbishList" type="com.party.demo.domain.RubbishWorkers">
+        <id column="userId" property="userId" jdbcType="VARCHAR"/>
+        <result column="collectUser" property="collectUser" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="weight" property="weight" jdbcType="VARCHAR"/>
+        <result column="userTel" property="userTel" jdbcType="VARCHAR"/>
+        <result column="point" property="point" jdbcType="VARCHAR"/>
+        <result column="rubbishType" property="rubbishType" jdbcType="VARCHAR"/>
+        <result column="collectType" property="collectType" jdbcType="VARCHAR"/>
+        <result column="unit" property="unit" jdbcType="VARCHAR"/>
+        <result column="build" property="build" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="VARCHAR"/>
+        <result column="identity" property="identity" jdbcType="VARCHAR"/>
+        <result column="putTime" property="putTime" jdbcType="VARCHAR"/>
+        <result column="village" property="village" jdbcType="VARCHAR"/>
+        <result column="userName" property="userName" jdbcType="VARCHAR"/>
+        <result column="imgPath" property="imgPath" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="checkCreateDate" resultType="java.lang.String">
+SELECT createtime FROM rubbishworks ORDER BY createtime DESC LIMIT 1 OFFSET 0
+</select>
+
+    <select id="getRubbishWorkersData" resultMap="RubbishList">
+SELECT * FROM rubbishworks
+    </select>
+</mapper>
+

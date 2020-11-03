@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.RecruitMapper">
+
+    <resultMap id="RecruitList" type="com.party.demo.domain.RecruitInfo">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="position" property="position" jdbcType="VARCHAR"/>
+        <result column="industry" property="industry" jdbcType="VARCHAR"/>
+        <result column="experience" property="experience" jdbcType="VARCHAR"/>
+        <result column="salary" property="salary" jdbcType="VARCHAR"/>
+        <result column="compName" property="compName" jdbcType="VARCHAR"/>
+        <result column="compStatus" property="compStatus" jdbcType="VARCHAR"/>
+        <result column="compSize" property="compSize" jdbcType="VARCHAR"/>
+        <result column="compAddress" property="compAddress" jdbcType="VARCHAR"/>
+        <result column="jobConcent" property="jobConcent" jdbcType="VARCHAR"/>
+        <result column="requirement" property="requirement" jdbcType="VARCHAR"/>
+        <result column="contact" property="contact" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="getRecruitInfo" parameterType="string" resultMap="RecruitList">
+        SELECT * FROM recruitinfo
+     </select>
+
+
+</mapper>
+

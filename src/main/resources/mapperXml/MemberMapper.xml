@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.MemberMapper">
+
+    <resultMap id="personList" type="com.party.demo.domain.Person">
+        <id column="id" property="id" jdbcType="INTEGER"/>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="gender" property="gender" jdbcType="VARCHAR"/>
+        <result column="levelEducation" property="levelEducation" jdbcType="VARCHAR"/>
+        <result column="contactOne" property="contactOne" jdbcType="VARCHAR"/>
+        <result column="contactTwo" property="contactTwo" jdbcType="VARCHAR"/>
+        <result column="society" property="society" jdbcType="VARCHAR"/>
+        <result column="age" property="age" jdbcType="INTEGER"/>
+        <result column="birth" property="birth" jdbcType="DATE"/>
+        <result column="inPartyDate" property="inPartyDate" jdbcType="DATE"/>
+    </resultMap>
+    <select id="getPerson" parameterType="int" resultMap="personList">
+        SELECT * FROM person
+     </select>
+
+</mapper>

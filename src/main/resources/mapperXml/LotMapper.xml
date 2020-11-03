@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.party.demo.mapper.LotMapper">
+
+    <resultMap id="LotList" type="com.party.demo.domain.ParkLot">
+        <id column="ParkNum" property="ParkNum" jdbcType="VARCHAR"/>
+        <result column="CarNum" property="CarNum" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+    </resultMap>
+    <select id="SearchParkLot" parameterType="string" resultMap="LotList">
+        SELECT * FROM parkinglot where status = #{status}
+     </select>
+
+    <select id="CountLotTrue"  resultType="java.lang.Integer">
+    SELECT COUNT(*) as value FROM parkinglot WHERE status is NULL
+     </select>
+
+    <select id="CountLotFalse"  resultType="java.lang.Integer">
+    SELECT COUNT(*) as value FROM parkinglot WHERE status is Not NULL
+     </select>
+</mapper>
+

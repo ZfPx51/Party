@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://47.103.159.97:5432/party_member
+    username: postgres
+    password: 123456
+    driver-class-name: org.postgresql.Driver
+server:
+  port: 8005
+  servlet:
+    context-path: /Party
+mybatis:
+  mapper-locations: classpath:mapperXml/*.xml
+rubbish:
+  url: http://coop.zjinsl.com
+  appid: 20201028
+  secret: i3bItUNb9w4E2x1q
